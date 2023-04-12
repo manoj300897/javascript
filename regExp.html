@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>regexp-1</title>
+    </head>
+    <body>
+        <script>
+            function Username() {
+                var username = document.getElementById("username").value;
+                var pattern = /^[a-z A-Z 0-9]{3,7}$/; 
+  
+            if (pattern.test(username)) {
+                    alert("yes its a valid username");
+                    return false;
+                }else{
+                    alert("yes its not a valid username,it have morethan 7 characters");
+                return true;
+                }
+                }
+
+        </script>
+
+        
+        <form onsubmit="Username()">
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+            <button type="submit">Submit</button>
+            <p id="man"></p>
+          </form>
+          
+    </body>
+</html>

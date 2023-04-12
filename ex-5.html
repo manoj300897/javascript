@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<head>
+    <title>exercise-5</title>
+    <script>
+          function addition(){
+            var f_no=parseInt(document.getElementById("f_no").value);
+            var sec_no=parseInt(document.getElementById("sec_no").value);
+            var tot=f_no+sec_no;
+            document.getElementById("result").innerHTML=tot; 
+          }    
+          function subtract(){
+            var f_no=parseInt(document.getElementById("f_no").value);
+            var sec_no=parseInt(document.getElementById("sec_no").value);
+            var tot=f_no-sec_no;
+            document.getElementById("result").innerHTML=tot; 
+          }      
+          function multiply(){
+            var f_no=parseInt(document.getElementById("f_no").value);
+            var sec_no=parseInt(document.getElementById("sec_no").value);
+            var tot=f_no*sec_no;
+            document.getElementById("result").innerHTML=tot; 
+
+          }      
+          function division(){
+            var f_no=parseInt(document.getElementById("f_no").value);
+            var sec_no=parseInt(document.getElementById("sec_no").value);
+            var tot=f_no/sec_no;
+            
+            
+          document.getElementById("result").innerHTML=tot; 
+          }            
+    </script>
+</head>
+<body>
+    <form><table>
+   <th>Enter first number</th><tr><td><input type="text" name="firstnumber" id="f_no"></td></tr>
+   <th>Enter second number</th><tr><td><input type="text" name="secondnumber" id="sec_no"></td></tr>
+   <tr><td><input type="button" value="add" id="add" onclick="addition()"></td></tr>
+   <tr><td><input type="button" value="sub" id="sub" onclick="subtract()"></td></tr>
+   <tr><td><input type="button" value="mul" id="mul" onclick="mutliply()"></td></tr>
+   <tr><td><input type="button" value="div" id="div" onclick="division()"></td></tr>
+   <tr><td><p id="result"></p></td></tr>
+   </table>
+    </form>
+</body>
+</html>

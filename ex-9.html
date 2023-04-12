@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>ex-9</title>
+    <script>
+         function msg1(){
+            var app =document.getElementById("main").value;
+            var mul="<option>number</option>";
+            var sel=document.getElementById("selec");
+            for(var i=1;i<=app;i++){
+                mul += ('<option value=' + i + '>' + i + '</option>');
+            }
+            sel.innerHTML = mul;
+            var btn = document.getElementById("create_btn");
+
+            
+        }
+        function msg2(){
+            var app = document.getElementById("selec").value;
+            if(app=="number"){
+                alert("select the num from dropdown");
+            }
+            else{
+                var p = document.getElementById("addit");
+                var str='<label for="NoofUser">select the user</label>';
+                var sel='<select id="s_box" '+i+'>';
+                var mul='<option>number<option>';
+                for(var i=1;i<=app;i++){
+                    mul += ('<option value=' + i + '>' + i + '</option>');
+                }
+                str += (sel+mul+'</select>');
+            }
+                var create_btn = '<input type="button" id="create_btn" value="Create" onclick="createform()">';
+                str += create_btn;
+                 p.innerHTML=str;
+            }
+    function createform()
+        {
+            var forms = '<form id="user_forms"></form>';
+            var form = document.getElementById("Forming");
+            var app = parseInt(document.getElementById("s_box").value);
+            var i = 1;
+            
+            var tot = "";
+            for( var i = 1; i <= app; i++ )
+            {
+                var m1 = '<label for="uname">Enter The User Name for ' + i + ' : </label>';
+                var m2 = '<input type="text" name="uname" id="UName' + i + '">';
+                var m3 = '<label for="psw">Password : </label><br>';
+                var m4 = '<input type="password" name="psw" id="psw' + i + '">';
+            
+                tot += m1+m2+m3+m4;
+            }
+
+            form.innerHTML = tot;
+        }
+    
+    </script>
+</head>
+<body>
+<div>
+    <form>
+    <h1 id="jk">Enter the integer</h1>
+    <input type="number" id="main"><br>
+    <input type="button" id="addbtn" value="submit" onclick="msg1()"><br>
+
+    <select id="selec"></select><br>
+    <input type="button" id="man" value="nextbtn" onclick="msg2()">
+    <div id="addit"></div>
+    <div id="Forming"></div>
+    <table id="table"></table>
+    </form>
+    </div>
+</body>
+</html>

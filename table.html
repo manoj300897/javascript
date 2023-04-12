@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Student Result</title>
+	<style>
+		input[type="text"], input[type="number"] {
+			margin: 10px 0;
+			padding: 5px;
+			width: 200px;
+		}
+		input[type="submit"] {
+			padding: 10px;
+			background-color: blue;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+    <script>
+		function calculateResult() {
+			// Get input values
+			let name = document.getElementById("name-input").value;
+			let rollno = document.getElementById("rollno-input").value;
+			let mark1 = parseInt(document.getElementById("mark1-input").value);
+			let mark2 = parseInt(document.getElementById("mark2-input").value);
+			let mark3 = parseInt(document.getElementById("mark3-input").value);
+
+			// Calculate total and average marks
+			let total = mark1 + mark2 + mark3;
+			let average = total / 3;
+
+			// Determine result (pass or fail)
+			let result;
+			if (mark1 < 35 || mark2 < 35 || mark3 < 35) {
+				result = "Fail";
+			} else if (average >= 75) {
+				result = "Distinction";
+			} else if (average >= 60) {
+				result = "First Class";
+			} else if (average >= 50) {
+				result = "Second Class";
+			} else {
+				result = "Pass";
+			}
+
+			// Display result
+			let resultContainer = document.getElementById("result-container");
+			resultContainer.innerHTML = "<p>Name: " + name + "</p>" +
+				"<p>Roll No: " + rollno + "</p>" +
+				"<p>Mark 1: " + mark1 + "</p>" +
+				"<p>Mark 2: " + mark2 + "</p>" +
+				"<p>Mark 3: " + mark3 + "</p>" +
+				"<p>Total Marks: " + total + "</p>" +
+				"<p>Average Marks: " + average.toFixed(2) + "</p>" +
+				"<p>Result: " + result + "</p>";
+		}
+	</script>
+</head>
+<body>
+	<form id="result-form">
+		<label for="name-input">Name:</label>
+		<input type="text" id="name-input" name="name"><br>
+		<label for="rollno-input">Roll No:</label>
+		<input type="text" id="rollno-input" name="rollno"><br>
+		<label for="mark1-input">Mark 1:</label>
+		<input type="number" id="mark1-input" name="mark1"><br>
+		<label for="mark2-input">Mark 2:</label>
+		<input type="number" id="mark2-input" name="mark2"><br>
+		<label for="mark3-input">Mark 3:</label>
+		<input type="number" id="mark3-input" name="mark3"><br>
+		<input type="submit" value="Submit" onclick="calculateResult()">
+	</form>
+	<br>
+	<div id="result-container"></div>
+	<form id="result-form">
+		<label for="name-input">Name:</label>
+		<input type="text" id="name-input" name="name"><br>
+		<label for="rollno-input">Roll No:</label>
+		<input type="text" id="rollno-input" name="rollno"><br>
+		<label for="mark1-input">Mark 1:</label>
+		<input type="number" id="mark1-input" name="mark1"><br>
+		<label for="mark2-input">Mark 2:</label>
+		<input type="number" id="mark2-input" name="mark2"><br>
+		<label for="mark3-input">Mark 3:</label>
+		<input type="number" id="mark3-input" name="mark3"><br>
+		
+	</form>
+</body>
+</html>
+
+
+
+function display()
+    {
+            document.getElementById("t1").value;
+			document.getElementById("t2").value;
+			//total
+            var n1 = parseInt(document.getElementById("t3").value);
+            var n2 = parseInt(document.getElementById("t4").value);
+            var n3 = parseInt(document.getElementById("t5").value);
+            var main1 = document.getElementById("main1");
+			
+           
+
+    }

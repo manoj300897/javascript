@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>genrate random int in math</title>
+        <script>
+            function random(max=10,min=1){
+                return Math.floor(Math.random() * (max-min+1))+min;
+            }
+            document.getElementById("main").innerhtml = random(20,1) + "<br>";
+            document.getElementById("main").innerhtml = random(1,10) + "<br>";
+            document.getElementById("main").innerhtml = random(6) + "<br>";
+            document.getElementById("main").innerhtml = random() + "<br>";
+        </script>
+    </head>
+    <body>
+        <p id="main"></p>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>events</title>
+    <script>
+        function msg(){
+            document.write("my name is manoj");
+        }
+        function msg2(){
+            alert("mouse over the text");
+        }
+        function msg3(){
+            document.write("my life")
+        }
+        function msg4(){
+            alert("drag it");
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <label>Name</label><input type="button" id="" value="manoj" onclick="msg()">
+        <p onmouseover="msg2()">touch me if u can</p>  
+        <input type="button" value="saysomething" id="" onfocus="msg3()"/>
+        <input type="button" value="mindit"id="" onkeydown="msg4()"/>  
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Table</title>
+	<style>
+		table, th, td {
+		  border: 1px solid black;
+		  border-collapse: collapse;
+		}
+		th, td {
+		  padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Object Table</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone No</th>
+				<th>Password</th>
+				<th>Address Line 1</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Country</th>
+				<th>Pincode</th>
+			</tr>
+		</thead>
+		<tbody id="table-body"></tbody>
+	</table>
+
+	<script>
+		const users = [
+			{
+				firstname: 'manoj',
+				lastname: 'kumar',
+				emailid: 'manojdavid1997@gmail.com',
+				phoneno: '1234567890',
+				password: 'kokkikumare',
+				Address: {
+					AddressLine1: '123 Marudham St',
+					AddressLine2: 'Apt 2B',
+					city: 'coimbatore',
+					state: 'tn',
+					country: 'india',
+					pincode: '641402'
+				}
+			},
+			{
+				firstname: 'vimal',
+				lastname: 'kumar',
+				emailid: 'kaaliya@gmail.com',
+				phoneno: '9876543210',
+				password: 'password123',
+				Address: {
+					AddressLine1: '456 kurinchi St',
+					AddressLine2: 'apt 12b',
+					city: 'coimbatore',
+					state: 'tn',
+					country: 'india',
+					pincode: '641402'
+				}
+			},
+			{
+				firstname: 'arun',
+				lastname: 'kumar',
+				emailid: 'chotabheem@gmail.com',
+				phoneno: '9795632145',
+				password: 'abc123',
+				Address: {
+					AddressLine1: '648 mullai St',
+					AddressLine2: 'apt 7g',
+					city: 'coimbatore',
+					state: 'tn',
+					country: 'india',
+					pincode: '641402'
+				}
+			}
+		];
+
+		 const tableBody = document.getElementById('table-body');
+		 users.map(user => {
+		 	const tr = document.createElement('tr');
+		 	tr.innerHTML = `
+				<td>${user.firstname}</td>
+		 		<td>${user.lastname}</td>
+		 		<td>${user.emailid}</td>
+		 		<td>${user.phoneno}</td>
+		 		<td>${user.password}</td>
+		 		<td>${user.Address.AddressLine1}</td>
+		 		<td>${user.Address.city}</td>
+		 		<td>${user.Address.state}</td>
+	     		<td>${user.Address.country}</td>
+				<td>${user.Address.pincode}</td>
+		 	`;
+			tableBody.appendChild(tr);
+		});
+	</script>
+</body>
+</html>

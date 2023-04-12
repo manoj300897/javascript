@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>ex-8</title>
+    <script>
+        function msg1(){
+            var app =document.getElementById("main").value;
+            var mul="<option>number</option>";
+            var sel=document.getElementById("selec");
+            for(var i=1;i<=app;i++){
+                mul += ('<option value=' + i + '>' + i + '</option>');
+            }
+            sel.innerHTML = mul;
+            
+            
+        }
+        function msg2(){
+            var app = document.getElementById("selec").value;
+            if(app=="number"){
+                alert("select the num from dropdown");
+            }
+            else{
+                var p = document.getElementById("addit");
+                var str='<label for="NoofUser">select the user</label>';
+                var sel='<select id=s_box' +i+'>';
+                var mul='<option>number<option>';
+                for(var i=1;i<=app;i++){
+                    mul += ('<option value=' + i + '>' + i + '</option>');
+                }
+                str += (sel+mul+'</select>');
+            }
+        p.innerHTML=str;
+        
+    }
+        
+    </script>
+</head>
+<body>
+    <div>
+    <form>
+    <h1 id="jk">Enter the integer</h1>
+    <input type="number" id="main"><br>
+    <input type="button" id="addbtn" value="submit" onclick="msg1()"><br>
+
+    <select id="selec"></select><br>
+    <input type="button" id="man" value="nextbtn" onclick="msg2()">
+    <p id="addit"></p>
+    </form>
+    </div>
+</body>
+</html>

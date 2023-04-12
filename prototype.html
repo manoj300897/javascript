@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        function Employee(firstName,lastName){
+            this.firstName=firstName;
+            this.lastName=lastName;
+        }
+        Employee.prototype.company="kgisl";
+        var employee1 = new Employee("manoj","kumar");
+        var employee2 = new Employee("vimal","kumar");
+        document.write(employee1.firstName+"<br>"+employee1.lastName+"<br>"+employee1.company+"<br>");
+        document.write(employee2.firstName+"<br>"+employee2.lastName+"<br>"+employee2.company+"<br>");
+    </script>
+    <!-- <input type="button" value="submit" onclick="Employee()"> -->
+    
+</body>
+</html>

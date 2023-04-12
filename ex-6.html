@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Integer Select Box</title>
+</head>
+<body>
+	<p>Enter an integer:</p>
+	<input type="text" id="input-box">
+	<br><br>
+	<select id="select-box">
+		<option value="">Select an option</option>
+	</select>
+	<script>
+		// Get the input box and select box
+		const inputBox = document.getElementById('input-box');
+		const selectBox = document.getElementById('select-box');
+		
+		// Add a keypress event listener to the input box to ensure only integers are accepted
+		inputBox.addEventListener('keypress', function(e) {
+			if (isNaN(e.key)) {
+				e.preventDefault();
+			}
+		});
+		
+		// Add a click event listener to the select box to populate it with options
+		selectBox.addEventListener('click', function() {
+			// Clear the current options
+			selectBox.innerHTML = '<option value="">Select an option</option>';
+			
+			// Get the integer value entered by the user
+			const inputValue = parseInt(inputBox.value);
+			
+			// Add options to the select box for values from 1 to the entered integer value
+			for (let i = 1; i <= inputValue; i++) {
+				const option = document.createElement('option');
+				option.value = i;
+				option.text = i;
+				selectBox.appendChild(option);
+			}
+		});
+	</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Integer Input and Select Box Example</title>
+</head>
+<body>
+	<label for="input">Enter an integer:</label>
+	<input type="number" id="input" name="input">
+	<button onclick="displayValues()">Display Values</button>
+	<br>
+	<select id="select" name="select">
+		<option value="">Select a value</option>
+	</select>
+	<script>
+		function displayValues() {
+			// Get the input value
+			var input = document.getElementById("input").value;
+
+			// Check if the input is an integer
+			if (Number.isInteger(parseInt(input))) {
+				// Clear the previous options in the select box
+				var select = document.getElementById("select");
+				select.options.length = 1;
+
+				// Add options to the select box
+				for (var i = 1; i <= input; i++) {
+					var option = document.createElement("option");
+					option.text = i;
+					option.value = i;
+					select.add(option);
+				}
+			} else {
+				alert("Please enter an integer!");
+			}
+		}
+	</script>
+</body>
+</html>

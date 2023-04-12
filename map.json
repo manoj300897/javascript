@@ -1,0 +1,17 @@
+const data =[
+    {
+        "name":"manojkumar",
+         age:25,
+         "gender":"male"
+    },
+    {
+        "name":"vimalkumar",
+        age:24,
+        "gender":"female"
+    }
+]
+
+function display(){
+    var a="";
+    
+}

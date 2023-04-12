@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            class Moment extends Date{
+                constructor(Year){
+                    super(Year);
+                }
+            }
+            var m=new Moment("August 30,1997 18:10:26");
+            document.write("Year value\t");
+            document.write(m.getFullYear());
+        </script>
+    </body>
+</html>

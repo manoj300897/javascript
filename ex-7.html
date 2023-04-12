@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>ex-7</title>
+    <script>
+        function msg1(){
+            var app =document.getElementById("main").value;
+            var mul="<option>select</option>";
+            var sel=document.getElementById("selec");
+            for(var i=1;i<=app;i++){
+                mul += ('<option value=' + i + '>' + i + '</option>');
+            }
+            sel.innerHTML = mul;
+        }
+        
+    </script>
+</head>
+<body><form>
+    <h1 id="jk">Enter the integer</h1>
+    <input type="number" id="main"><br>
+    <input type="button" value="submit" onclick="msg1()" onkeypress="msg1()">
+    <select id="selec"></select><br>
+    </form>
+</body>
+</html>

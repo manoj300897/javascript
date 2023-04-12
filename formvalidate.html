@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<head>
+    <title>document</title>
+    <script>
+        alert("hi");
+        function msg(){
+            var a=document.getElementById("display").value;
+            var b=document.getElementById("main").value;
+            if((a=="null") || (a==" ")){
+                document.getElementById("display").focus();
+                alert("your input is empty");
+            }
+            else if((b=="") || (b=="null")){
+                document.getElementById("main").focus();
+                alert("input is not valid");
+            }
+
+
+
+            if(a==b){
+                alert("password is valid")
+            }
+            else{
+                alert("password is not valid");
+            }
+            
+              }
+              
+    </script>
+</head>
+<body>
+   <h1>password</h1><input type="text" id="display">
+   <h1>confirmpassword</h1><input type="text" id="main">
+   <button onclick="msg()">drag it</button>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Data Extraction</title>
+</head>
+<body>
+	<button onclick="extractJSON()">Extract JSON Data</button>
+	<div id="output"></div>
+	<script src="script.js"></script>
+</body>
+</html>
+
+
+function extractJSON() {
+	// Define the JSON object
+	var data = {
+		"key1": "value1",
+		"key2": "value2",
+		"key3": "value3"
+	};
+
+	// Extract the values of the keys
+	var key1Value = data.key1;
+	var key2Value = data.key2;
+	var key3Value = data.key3;
+
+	// Display the extracted values in the div element
+	var outputDiv = document.getElementById("output");
+	outputDiv.innerHTML = "Key1: " + key1Value + "<br>" + "Key2: " + key2Value + "<br>" + "Key3: " + key3Value;
+}
+
+--------------------------------------------------------------
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+  
+    <input type="submit" value="Submit">
+  </form>
+  
+
+<form>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button id="submit-button">Submit</button>
+  </form>
+  
+  <script>
+    const passwordField = document.getElementById('password');
+    const submitButton = document.getElementById('submit-button');
+  
+    submitButton.addEventListener('click', (event) => {
+      if (passwordField.value.length < 6) {
+        alert('Password must be at least 6 characters long');
+        event.preventDefault();
+      }
+    });
+  </script>
+  
+
+
+
+<form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="8" required>
+  
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <input type="submit" value="Submit">
+  </form>
+  
+  <script>
+    const form = document.getElementById('myForm');
+  
+    form.addEventListener('submit', (event) => {
+      // Prevent form submission if validation fails
+      event.preventDefault();
+  
+      // Get form fields
+      const nameField = form.elements['name'];
+      const usernameField = form.elements['username'];
+      const passwordField = form.elements['password'];
+      const phoneField = form.elements['phone'];
+      const emailField = form.elements['email'];
+  
+      // Validate name field
+      if (!nameField.value) {
+        alert('Name field is required');
+        return;
+      }
+  
+      // Validate username field
+      if (!usernameField.value) {
+        alert('Username field is required');
+        return;
+      }
+  
+      // Validate password field
+      if (passwordField.value.length < 8) {
+        alert('Password must be at least 8 characters long');
+        return;
+      }
+  
+      // Validate phone field
+      if (!phoneField.value.match(/^\d{10}$/)) {
+        alert('Phone number must be 10 digits long');
+        return;
+      }
+  
+      // Validate email field
+      if (!emailField.value) {
+        alert('Email field is required');
+        return;
+      }
+  
+      // Submit form if validation passes
+      alert('Form submitted successfully');
+      form.submit();
+    });
+  </script>
+  

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+<div id="rusk">
+    <table id="main">
+        <h2>payroll calculate</h2>
+        <tr><td>
+        <label>Empname</label></td><td>
+        <input type="text" id="empname" name="empname"></td></tr><br>
+        <tr><td><label>Empid</label></td><td>
+        <input type="number" id="empid" name="empid"></td></tr><br>
+        <tr><td><label>Designation</label></td><td>
+        <input type="text" id="design" name="designation"></td></tr><br>
+        <tr><td><label>basicpay</label></td><td>
+        <input type="text" id="bp" name="basicpay"></td></tr><br>
+        <tr><td>
+        <input type="button" value="submit" onclick="calculatePayroll()"></td>
+		<td><button type="reset">Reset</button></td>
+        </tr>
+
+</table>
+</div>
+<div>
+    <h3>payslip</h3>
+        <table>
+        <tr><td>
+        <label>Empname</label></td><td>
+        <input type="text" id="empname_2" name="empname_2"></td></tr><br>
+        <tr><td><label>Empid</label></td><td>
+        <input type="number" id="empid_2" name="empid_2"></td></tr><br>
+        <tr><td><label>Designation</label></td><td>
+        <input type="text" id="design_2" name="designation_2"></td></tr><br>
+        <tr><td><label>basicpay</label></td><td>
+        <input type="text" id="bp_2" name="basicpay_2"></td></tr><br></div>
+        <tr><td>HRA</td><td><input type="number" id="hra" value="15"></td></tr>
+        <tr><td>DA</td><td><input type="number" id="da" value="15"></td></tr>
+        <tr><td>PF</td><td><input type="number" id="pf" value="3"></td></tr>
+        <tr><td>Grosspay</td><td><input type="number" id="gpay" value=""></td></tr>
+        <tr><td>Netpay</td><td><input type="number" id="Npay" value=""></td></tr>
+                </table>
+</div>
+
+    <script type="text/javascript" src="dis.js">
+
+    </script>
+</body>
+</html>
+
+
+

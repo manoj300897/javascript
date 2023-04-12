@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        async function display(){
+            var response = await fetch("https://fakestoreapi.com/products");
+            var datas = await response.json();
+            console.log(datas);
+            var a="";
+            datas.map((j)=>{
+                a += '<li>'+j.id+'</li>';
+                a += '<li>'+j.price+'</li>';
+            });
+            console.log(a)
+        var ul = document.getElementById("display");
+        console.log(ul)
+        ul.innerHTML =a;
+        }
+    </script>
+
+    <input type="button" value="sumit" onclick="display()">
+
+    <ul id="display"></ul>
+</body>
+</html>

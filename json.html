@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>ex-10</title>
+    <script>
+        function msg(){
+        var f_name=document.getElementById("m1").value;
+        var l_name=document.getElementById("m2").value;
+        var db=document.getElementById("m3").value;
+        var pwd=document.getElementById("m4").value;
+            const obj=[{
+                    "firstname":f_name,
+                    "lastname":l_name,
+                    "dob":db,
+                    "password":pwd
+        }];
+       for(kon in obj){
+        console.log(obj);
+       }
+        }
+       
+    
+    </script>
+</head>
+<body>
+    <form>
+        <label>firstname</label>
+        <input type="text" id="m1" name="firstname">
+        <label>lastname</label>
+        <input type="text" id="m2" name="lastname">
+        <label>Dob</label>
+        <input type="date" id="m3" name="dob">
+        <label>password</label>
+        <input type="password" id="m4" name="pwd">
+        <input type="button" value="submit" id="m5" onclick="msg()">
+        <p id="res"></p>
+        
+    </form>
+</body>
+</html>

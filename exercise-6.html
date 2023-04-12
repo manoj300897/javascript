@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>ex-6</title>
+    <script>
+        function msg(){
+            var app =document.getElementById("main").value;
+            var mul="<option>numbers</option>";
+            var sel=document.getElementById("selec");
+            for(var i=0;i<=app;i++){
+                mul += ("<option>" + i + "</option>");
+            }
+            sel.innerHTML = mul;
+        }
+        
+    </script>
+</head>
+<body>
+    <h1 id="jk">Enter the integer</h1>
+    <input type="number" id="main"><br>
+    <button onclick="msg()">display</button><br>
+    <select id="selec"></select><br>
+    
+</body>
+</html>

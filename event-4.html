@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<head>
+    <title>document</title>
+    <script>
+        alert("hi");
+        function msg(){
+            var a=document.getElementById("display").value;
+            var b=document.getElementById("main").value;
+            if(a==b){
+                alert("yes its ur password")
+            }
+            else{
+                alert("its not ur password");
+            }
+            
+              }
+    </script>
+</head>
+<body>
+   <h1>password</h1><input type="text" id="display">
+   <h1>confirmpassword</h1><input type="text" id="main">
+   <button onclick="msg()">drag it</button>
+</body>
+</html>

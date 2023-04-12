@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+	<title>Student Details</title>
+	<script type="text/javascript">
+		var students = []; // array to store student records
+		function addStudent() {
+			var name = document.getElementById("name").value;
+			var rollno = document.getElementById("rollno").value;
+			var mark1 = parseFloat(document.getElementById("mark1").value);
+			var mark2 = parseFloat(document.getElementById("mark2").value);
+			var mark3 = parseFloat(document.getElementById("mark3").value);
+			var total = mark1 + mark2 + mark3;
+            
+			var average = total / 3;
+			var grade;
+			if (average >= 90) {
+				grade = "A+";
+			} else if (average >= 80) {
+				grade = "A";
+			} else if (average >= 70) {
+				grade = "B";
+			} else if (average >= 60) {
+				grade = "C";
+			} else if (average >= 50) {
+				grade = "D";
+			} else {
+				grade = "F";
+			}
+			var student = { name: name, rollno: rollno, mark1: mark1, mark2: mark2, mark3: mark3, total: total, average: average, grade: grade };
+			students.push(student); // add student record to array
+			displayStudents(); // display all student records in table format
+		}
+		function displayStudents() {
+			var table = "<table><tr><th>Name</th><th>Roll No.</th><th>Mark 1</th><th>Mark 2</th><th>Mark 3</th><th>Total</th><th>Average</th><th>Grade</th></tr>";
+			for (var i = 0; i < students.length; i++) {
+				table += "<tr><td>" + students[i].name + "</td><td>" + students[i].rollno + "</td><td>" + students[i].mark1 + "</td><td>" + students[i].mark2 + "</td><td>" + students[i].mark3 + "</td><td>" + students[i].total + "</td><td>" + students[i].average + "</td><td>" + students[i].grade + "</td></tr>";
+			}
+			table += "</table>";
+			document.getElementById("output").innerHTML = table;
+		}
+	</script>
+    <style>
+     body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+      .container {
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      table {
+        margin-top: 20px;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #4caf50;
+        color: #fff;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+</head>
+<body>
+	<h1>Student Details</h1>
+	<form>
+		<label>Name:</label><input type="text" id="name"><br>
+		<label>Roll No.:</label><input type="text" id="rollno"><br>
+		<label>Mark 1:</label><input type="text" id="mark1"><br>
+		<label>Mark 2:</label><input type="text" id="mark2"><br>
+		<label>Mark 3:</label><input type="text" id="mark3"><br>
+		<input type="button" value="Submit" onclick="addStudent()">
+	</form>
+	<div id="output"></div>
+</body>
+</html>

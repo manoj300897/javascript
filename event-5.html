@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<head>
+    <title>document</title>
+    <script>
+        alert("hi");
+        function msg(){
+            var a=document.getElementById("display").value;
+            var b=document.getElementById("main").value;
+            if((a=="null") || (a==" ")){
+                document.getElementById("display").focus();
+                alert("your input is empty");
+            }
+            else if((b=="") || (b=="null")){
+                document.getElementById("main").focus();
+                alert("input is not valid");
+            }
+
+
+
+            if(a==b){
+                alert("password is valid")
+            }
+            else{
+                alert("password is not valid");
+            }
+            
+              }
+              
+    </script>
+</head>
+<body>
+   <h1>password</h1><input type="text" id="display">
+   <h1>confirmpassword</h1><input type="text" id="main">
+   <button onclick="msg()">drag it</button>
+</body>
+</html>

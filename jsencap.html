@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     class Student{
+        constructor(){
+            var name;
+            var marks;
+            var grade;
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name=name;
+        }
+        getMarks(){
+            return this.marks;
+        }
+        setMarks(marks){
+            if(marks<0 || marks>100)
+                {
+                    alert("manoj is pass");
+                }
+                else{
+                    this.marks=marks;
+                }
+            }
+        getGrade(){
+            return this.grade;
+        }
+    setGrade(grade){
+        if(grade>40 && grade<100){
+            alert("manoj");
+        }else{
+            this.grade=grade;
+        }
+    }}
+            var stud = new Student();
+                    stud.setName("manoj");
+                    stud.setMarks(110);
+                    stud.setGrade(45);
+                    document.write(stud.getName()+"<br>"+stud.getMarks()+"<br>"+getGrade());
+            </script>
+    </body>
+</html>

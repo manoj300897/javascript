@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<body>
+<script>
+let options ={
+    "title":"menu",
+    "width":100,
+    "height":200
+};
+let ={title} =options;
+// let={width:wi,height:hi,title:ti}=options;
+let{title,...rest}=options;
+alert(rest.title);
+// alert(ti);
+// alert(hi);
+// alert(wi);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payroll Calculator</title>
+	<script src="payroll.js"></script>
+</head>
+<body>
+	<h1>Payroll Calculator</h1>
+	<form>
+		<label for="name">Employee Name:</label>
+		<input type="text" id="name" name="name" required><br>
+
+		<label for="basicPay">Basic Pay:</label>
+		<input type="number" id="basicPay" name="basicPay" min="0" required><br>
+
+		<label for="allowances">Allowances:</label>
+		<input type="number" id="allowances" name="allowances" min="0"><br>
+
+		<label for="deductions">Deductions:</label>
+		<input type="number" id="deductions" name="deductions" min="0"><br>
+
+		<button type="button" onclick="calculatePayroll()">Calculate Payroll</button>
+		<button type="reset">Reset</button>
+	</form>
+
+	<h2>Pay Slip</h2>
+	<div id="paySlip"></div>
+</body>
+</html>
+
+function calculatePayroll() {
+    const name = document.getElementById("name").value;
+    const basicPay = document.getElementById("basicPay").value;
+    const allowances = document.getElementById("allowances").value;
+    const deductions = document.getElementById("deductions").value;
+
+    // Validate input
+    if (!name || !basicPay) {
+        alert("Please enter employee name and basic pay.");
+        return;
+    }
+
+    // Calculate payroll
+    const grossPay = parseInt(basicPay) + parseInt(allowances);
+    const netPay = grossPay - parseInt(deductions);
+
+    // Display pay slip
+    const paySlip = document.getElementById("paySlip");
+    paySlip.innerHTML = `
+        <p><strong>Employee Name:</strong> ${name}</p>
+        <p><strong>Basic Pay:</strong> ${basicPay}</p>
+        <p><strong>Allowances:</strong> ${allowances || "0"}</p>
+        <p><strong>Deductions:</strong> ${deductions || "0"}</p>
+        <p><strong>Gross Pay:</strong> ${grossPay}</p>
+        <p><strong>Net Pay:</strong> ${netPay}</p>
+    `;
+}
+

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>find the highest value</title>
+        <script>
+            function max(input){
+                if(toString.call(input) !== "[object array]")
+                return false;
+                return Math.max.apply(null,input);
+            }
+            document.write(max([12,34,56,1]));
+            document.write(max([-12,-34,0,-56,-1]));
+        </script>
+    </head>
+    <body>
+       <p id="main"></p>
+    </body>
+</html>
